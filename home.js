@@ -1,7 +1,6 @@
 let nav = [];
 const radius = 50;
-let circleSpeed = 2;
-const notes = ["C3", "D2","E3", "F2","G3","A2", "B2","C1"];
+let circleSpeed = 1;
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -18,14 +17,18 @@ function draw() {
         nav[i].checkBoundaries(nav,i);
         nav[i].show();
     }
-    if(!focused){
-        for(var i = 0; i < 6; i++){
-            nav[i].synth.amp(0, 1);
-        }
-    }
 }
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+}
+
+//On mouse press, link to new page
+function mousePressed(){
+    for(var i = 0; i<6;i++){
+        if(nav[i].checkHover(nav[i])){
+            // window.open("https://www.youtube.com", "_self");
+        }
+    }
 }
 
