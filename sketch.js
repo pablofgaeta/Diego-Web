@@ -9,7 +9,6 @@ function setup() {
         nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), i);
         nav[i].synth.start();
     }
-
 }
 
 function draw() {
@@ -19,11 +18,11 @@ function draw() {
         nav[i].checkBoundaries(nav,i);
         nav[i].show();
     }
-    // if(!focused){
-    //     for(var i = 0; i < 6; i++){
-    //         nav[i].synth.amp(0);
-    //     }
-    // }
+    if(!focused){
+        for(var i = 0; i < 6; i++){
+            nav[i].synth.amp(0);
+        }
+    }
 }
 
 function windowResized() {
