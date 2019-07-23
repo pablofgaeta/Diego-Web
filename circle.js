@@ -53,7 +53,7 @@ class circleNav {
 
     checkPlay(){
         if(!this.playing){
-            this.synth.amp(0.5,0.1);
+            this.synth.amp(0.1,0.1);
             this.playing = true;
         }
         else{
