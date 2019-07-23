@@ -20,7 +20,7 @@ function draw() {
     }
     if(!focused){
         for(var i = 0; i < 6; i++){
-            nav[i].synth.amp(0);
+            nav[i].synth.amp(0, 1);
         }
     }
 }
