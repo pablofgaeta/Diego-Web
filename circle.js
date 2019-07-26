@@ -1,12 +1,12 @@
 class circleNav {
-    constructor(pos, dir, num){
-        this.text = num + '';
+    constructor(pos, dir, page){
+        this.text = page;
         this.pos = pos
         this.dir = dir;
         this.r = radius;
         this.synth = new p5.Oscillator();
         this.synth.setType('sine');
-        this.synth.freq(floor(random(100,500)));
+        this.synth.freq(random(100, 600));
         this.synth.amp(0);
         this.playing = false;
         this.hovering = false;
@@ -23,7 +23,21 @@ class circleNav {
             }
             ellipse(this.pos.x,this.pos.y,this.r*2);
             fill(255);
+            push();
+            var txts = 14;
+            // while(true){
+            //     if(this.text.length * txts < this.r *2){
+            //         txts+= .2;
+            //     }
+            //     else{
+            //         break;
+            //     }
+            // }
+            // txts-=.1;
+            textAlign(CENTER, CENTER);
+            textSize(txts);
             text(this.text,this.pos.x,this.pos.y);
+            pop();
         pop();
     }
 

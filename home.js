@@ -1,11 +1,13 @@
 let nav = [];
-const radius = 50;
-let circleSpeed = 1;
+let radius;
+let circleSpeed = 2;
+let pages = ["About", "Influences", "Performances", "Bio", "Text", "Contact"];
 
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    radius = width > height ? (height / 10) : (width / 10);
     for(var i = 0; i<6;i++){
-        nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), i);
+        nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), pages[i]);
         nav[i].synth.start();
     }
 }
@@ -21,6 +23,11 @@ function draw() {
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
+    radius = width > height ? (height / 10) : (width / 10);
+    for(var i = 0; i<6;i++){
+        nav[i].r = radius;
+    }
+    
 }
 
 //On mouse press, link to new page
