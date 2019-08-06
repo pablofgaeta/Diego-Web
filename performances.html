@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- 
+        META TAGS
+    -->
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <meta http-equiv="X-UA-Compatible" content="ie=edge">
+
+    <!--
+        TITLE
+    -->
+    <title>Performances</title>
+
+    <!--
+        STYLES
+    -->
+    <style>
+        /* BUGGY BLUR NAV BAR        
+        .blurbg {
+            position: -webkit-sticky; 
+            position: sticky;
+            top: 0;
+
+            width: 100%;
+            height: 120px;
+            background-image: url("bg.jpg");
+            -webkit-filter: blur(5px);
+            filter: url('/media/blur.svg#blur');
+            filter: blur(5px);
+            z-index: -1;
+        } */
+        body {
+            margin: 0px;
+            padding: 0px;
+            background-image: url("bg.jpg");
+            background-color: rgb(244,232,210);
+            overflow: scroll;
+            z-index: 1;
+        }
+        .vertpad {
+            padding-top: 25px;
+        }
+        .header {
+            color: rgb(0, 0, 0);
+            text-align: center;
+            font-family: "Work Sans", sans-serif;
+            font-weight: 200;
+            font-size : 60px;
+            z-index: 100;
+        }
+        iframe {
+            display: block;
+            margin: 0 auto;
+        }
+        mark {
+            background-color:beige;
+        }
+    </style>
+</head>
+
+<!--
+    BODY
+-->
+<body>
+    <!--
+        HEAD
+    -->
+    <div class="header">
+        <div class="vertpad"></div>
+        <div class="header"><mark>performances</mark></div>
+        <div class="vertpad"></div>
+    </div>
+    <!--
+        VIMEO CONTENT
+    -->
+    <div class="vimeo">
+        <iframe src="https://player.vimeo.com/video/238238573" width="640" height="287" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="vertpad"></div>
+    <div class="vimeo">
+        <iframe src="https://player.vimeo.com/video/245582460" width="640" height="270" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="vertpad"></div>
+    <div class="vimeo">
+        <iframe src="https://player.vimeo.com/video/332983078" width="640" height="360" frameborder="0" allow="autoplay; fullscreen" allowfullscreen></iframe>
+    </div>
+    <div class="vertpad"></div>
+    
+    
+</body>
+</html>

@@ -12,8 +12,11 @@ class circleNav {
         this.hovering = false;
     }
 
-    show(){
+    move(){
         this.pos.add(this.dir);
+    }
+
+    show(){
         push();
             if(this.checkHover(this)){
                 fill(255,0,255);
@@ -24,7 +27,7 @@ class circleNav {
             ellipse(this.pos.x,this.pos.y,this.r*2);
             fill(255);
             push();
-            var txts = 14;
+            var txts = this.r / 4;
             // while(true){
             //     if(this.text.length * txts < this.r *2){
             //         txts+= .2;

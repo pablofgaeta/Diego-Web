@@ -17,6 +17,7 @@ function draw() {
     noStroke();
     for(var i = 0; i<6;i++){
         nav[i].checkBoundaries(nav,i);
+        nav[i].move();
         nav[i].show();
     }
 }
