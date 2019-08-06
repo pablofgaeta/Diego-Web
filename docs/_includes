@@ -1,0 +1,5 @@
+{% include bio.html %}
+{% include contact.html %}
+{% include index.html %}
+{% include insp.html %}
+{% include perf.html %}
