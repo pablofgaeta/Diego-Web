@@ -1,14 +1,10 @@
 class circleNav {
-    constructor(pos, dir, page){
+    constructor(pos, dir, page, sound){
         this.text = page;
         this.pos = pos
         this.dir = dir;
         this.r = radius;
-        this.synth = new p5.Oscillator();
-        this.synth.setType('sine');
-        this.synth.freq(random(100, 600));
-        this.synth.amp(0);
-        this.playing = false;
+        this.sound = sound;
         this.hovering = false;
     }
 
@@ -85,13 +81,8 @@ class circleNav {
     }
 
     checkPlay(){
-        if(!this.playing){
-            this.synth.amp(0.16,0.1);
-            this.playing = true;
-        }
-        else{
-            this.synth.amp(0,0.1);
-            this.playing = false;
+        if(!this.sound.isPlaying()){
+            this.sound.play();
         }
     }
 }
