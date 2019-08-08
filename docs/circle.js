@@ -6,6 +6,8 @@ class circleNav {
         this.r = radius;
         this.sound = sound;
         this.hovering = false;
+        this.returndir = dir;
+        this.image = null;
     }
 
     move(){
@@ -13,14 +15,17 @@ class circleNav {
     }
 
     show(){
-        push();
+        push(); 
             if(this.checkHover(this)){
                 fill(255,0,255);
+                // this.returndir = this.dir;
+                // this.dir = createVector(0,0);
             }
             else{
                 fill(183, 174, 155);
+                // this.dir = this.returndir;
             }
-            ellipse(this.pos.x,this.pos.y,this.r*2);
+            this.image = ellipse(this.pos.x,this.pos.y,this.r*2);
             fill(255);
             push();
             var txts = this.r / 4;
@@ -82,6 +87,7 @@ class circleNav {
 
     checkPlay(){
         if(!this.sound.isPlaying()){
+            console.log("Playing " + this)
             this.sound.play();
         }
     }
