@@ -6,17 +6,17 @@ let sounds = [];
 
 function preload(){
     for(var i = 0; i<7; i++){
-        sounds[i]= loadSound("../sounds/" + (i+1) + ".wav");
+        sounds[i]= loadSound("./sounds/" + (i+1) + ".wav");
     }
     
-    sounds[7] = loadSound("../sounds/M1.wav");
-    sounds[8] = loadSound("../sounds/M2.wav");
-    sounds[9] = loadSound("../sounds/M3.wav");
-    sounds[10] = loadSound("../sounds/M4.wav");
-    sounds[11] = loadSound("../sounds/M4b.wav");
-    sounds[12] = loadSound("../sounds/M5.wav");
-    sounds[13] = loadSound("../sounds/M6.wav");
-    sounds[14] = loadSound("../sounds/M7b.wav");
+    sounds[7] = loadSound("./sounds/M1.wav");
+    sounds[8] = loadSound("./sounds/M2.wav");
+    sounds[9] = loadSound("./sounds/M3.wav");
+    sounds[10] = loadSound("./sounds/M4.wav");
+    sounds[11] = loadSound("./sounds/M4b.wav");
+    sounds[12] = loadSound("./sounds/M5.wav");
+    sounds[13] = loadSound("./sounds/M6.wav");
+    sounds[14] = loadSound("./sounds/M7b.wav");
 }
 function setup() {
     createCanvas(windowWidth, windowHeight);
@@ -60,7 +60,6 @@ function mousePressed(){
     for(var i = 0; i<7;i++){
         if(nav[i].checkHover(nav[i])){
             window.top.location.href = "./" + nav[i].text + ".html";
-            // console.log(nav[i].text);
         }
     }
 }
