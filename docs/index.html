@@ -58,9 +58,15 @@
             position:absolute;
             display: block;
             margin: 0 auto;
-            height:80%;
+            height:100%;
             width:100%;
             border:0;
+            filter: hue-rotate(0deg);
+            animation: hueshift 10s infinite;
+        }
+
+        @keyframes hueshift {
+            50% {filter: hue-rotate(360deg);}
         }
         mark {
             background-color:rgba(143, 143, 143, 0.783);
@@ -140,7 +146,7 @@
           </button>
         </nav>
     </div>
-    <iframe src="./3d/index.html" id="circleArt" frameborder="0" sandbox="allow-top-navigation allow-scripts allow-forms"></iframe>
+    <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
     
 </body>
 </html>

@@ -24,21 +24,21 @@ function setup() {
 
 function draw() {
   clear();
-  flying -= 0.008;
+  flying -= 0.01;
   var yoff = flying;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
     for (var x = 0; x < cols; x++) {
-      terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 100);
+      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -50, 25);
       xoff += 0.2;
     }
     yoff += 0.2;
   }
   background(color(0, 0, 0, 0));
-  translate(0, 100);
+  // translate(0, 10);
   rotateX(4*PI/9);
   translate(-w/2, -h/2);
-  strokeWeight(0.5);
+  strokeWeight(.5);
   for (var y = int(rows/3); y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);
     var yoff = map(y,int(rows/3), rows-1, 0,100);
@@ -62,4 +62,10 @@ function windowResized(){
   h = height+500;
   cols = w / scl;
   rows = h/ scl;
+  for (var x = 0; x < cols; x++) {
+    terrain[x] = [];
+    for (var y = 0; y < rows; y++) {
+      terrain.push(0); //specify a default value for now
+    }
+  }
 }
