@@ -1,5 +1,5 @@
 var cols, rows;
-var scl = 30;
+var scl = 50;
 var w;
 var h;
 
@@ -10,9 +10,9 @@ var terrain = [];
 function setup() {
   createCanvas(windowWidth, windowHeight, WEBGL);
   w = width+300;
-  h = height+500;
+  h = height+300;
   cols = w / scl;
-  rows = h/ scl;
+  rows = h / scl;
 
   for (var x = 0; x < cols; x++) {
     terrain[x] = [];
@@ -24,26 +24,30 @@ function setup() {
 
 function draw() {
   clear();
-  flying -= 0.1;
+  flying -= 0.008;
   var yoff = flying;
   for (var y = 0; y < rows; y++) {
     var xoff = 0;
     for (var x = 0; x < cols; x++) {
-      terrain[x][y] = map(noise(xoff, yoff), 0, 1, -100, 100);
+      terrain[x][y] = map(noise(xoff, yoff), 0, 1, 0, 100);
       xoff += 0.2;
     }
     yoff += 0.2;
   }
   background(color(0, 0, 0, 0));
-  translate(0, 50);
+  translate(0, 100);
   rotateX(4*PI/9);
   translate(-w/2, -h/2);
-  // stroke('rgb(0,0,255)')
-  strokeWeight(.5);
-  for (var y = 0; y < rows-1; y++) {
+  strokeWeight(0.5);
+  for (var y = int(rows/3); y < rows-1; y++) {
     beginShape(TRIANGLE_STRIP);
-    fill(y,0,y);
+    var yoff = map(y,int(rows/3), rows-1, 0,100);
+    fill(yoff,0,yoff);
+    
     for (var x = 0; x < cols; x++) {
+      // var filter = map(terrain[x][y-1], 0,100,0,40);
+      // var filter2 = map(terrain[x][y], 0,100,0,40);
+      // var filter3 = map(terrain[x][y+1], 0,100,0,100);
 
       vertex(x*scl, y*scl, terrain[x][y]);
       vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
