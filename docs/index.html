@@ -23,7 +23,7 @@
     <!--
         TITLE
     -->
-    <title>Contact</title>
+    <title>Home</title>
 
     <!--
         STYLES
@@ -32,8 +32,8 @@
         body {
             margin: 0px;
             padding: 0px;
-            background-image: url("bg.jpg");
-            background-color: white;
+            /* background-image: url("bg.jpg"); */
+            background-color: black;
             overflow: scroll;
         }
         .vertpad {
@@ -62,7 +62,6 @@
             width:100%;
             border:0;
         }
-
         mark {
             background-color:rgba(143, 143, 143, 0.783);
         }
@@ -71,19 +70,16 @@
             color: white;
             text-decoration: none;
         }
-
         /* visited link */
         a:visited {
             color: white;
             text-decoration: none;
         }
-
         /* mouse over link */
         a:hover {
             background-color: rgb(0, 0, 0);
             text-decoration: none;
         }
-
         /* selected link */
         a:active {
             color: blue;
@@ -103,9 +99,20 @@
 -->
 <body>
     <!-- HEAD -->
-    <div id="head">
-        <div class="header">home</div>
-    </div>
+    <!-- <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-auto">
+                <img src="elbarto.gif" style="display: block; margin:auto;"></img>
+            </div>
+            <div class="col col-md-auto">
+                <div class="header">home</div>
+            </div>
+            <div class="col col-md-auto">
+                <img src="elbarto.gif" style="display: block; margin:auto;"></img>
+            </div>
+        </div>
+    </div> -->
+    <div class="header">home</div>
 
     <!-- NAV BAR -->
     <div class="pos-f-t">
@@ -132,9 +139,8 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
-        <div class="vertpad"></div>
     </div>
-    <iframe src="index2.html" id="circleArt" frameborder="0" sandbox="allow-top-navigation allow-scripts allow-forms"></iframe>
+    <iframe src="./3d/index.html" id="circleArt" frameborder="0" sandbox="allow-top-navigation allow-scripts allow-forms"></iframe>
     
 </body>
 </html>

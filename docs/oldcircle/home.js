@@ -1,7 +1,7 @@
 let nav = [];
 let radius;
 let circleSpeed = 2;
-let pages = ["index", "contact", "perf", "bio", "insp", "contact", "games"];
+let pages = ["index", "contact", "perf", "bio", "insp", "index", "games"];
 let sounds = [];
 
 function preload(){
@@ -25,7 +25,7 @@ function setup() {
     for(var i = 0; i<6;i++){
         nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), pages[i], sounds[i]);
     }
-    nav[6] = new circleNav(createVector(width/6,height/10),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), pages[6], sounds[i]);
+    nav[6] = new circleNav(createVector(width/6,height/10),createVector(random(-1*circleSpeed,circleSpeed), random(-1*circleSpeed,circleSpeed)), pages[6], sounds[6]);
 }
 
 function draw() {

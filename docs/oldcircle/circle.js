@@ -8,6 +8,7 @@ class circleNav {
         this.hovering = false;
         this.returndir = dir;
         this.image = null;
+        this.mass = ceil(random(1,3));
     }
 
     move(){
@@ -29,15 +30,6 @@ class circleNav {
             fill(255);
             push();
             var txts = this.r / 4;
-            // while(true){
-            //     if(this.text.length * txts < this.r *2){
-            //         txts+= .2;
-            //     }
-            //     else{
-            //         break;
-            //     }
-            // }
-            // txts-=.1;
             textAlign(CENTER, CENTER);
             textSize(txts);
             text(this.text,this.pos.x,this.pos.y);
@@ -62,19 +54,35 @@ class circleNav {
                 var dx = this.pos.x-arr[i].pos.x;
                 var dy = this.pos.y-arr[i].pos.y;
                 dist = sqrt(sq(dx)+sq(dy));
-                if(dist <= (minDist)){
-                    var tempx = this.dir.x;
-                    var tempy = this.dir.y;
-                    var tempdx = arr[i].dir.x;
-                    var tempdy = arr[i].dir.y;
-                    this.dir.x = tempdx;
-                    this.dir.y = tempdy;
-                    arr[i].dir.x = tempx;
-                    arr[i].dir.y = tempy;
+                if(dist < (minDist)){
+                    var massdiff = (this.mass - arr[i].mass) / (this.mass + arr[i].mass);
+                    var massadd = (2*arr[i].mass)/(this.mass + arr[i].mass);
+                    var tempa = this.dir;
+                    var tempb = arr[i].dir;
+                    this.dir = p5.Vector.add(p5.Vector.mult(tempa, massdiff),p5.Vector.mult(tempb, massadd));
+                    arr[i].dir = p5.Vector.sub(p5.Vector.mult(tempa, massadd),p5.Vector.mult(tempb, massdiff));
                     this.checkPlay();
                 }
             }
         }
+        // for(var i = 0; i<6; i++){
+        //     if(ind!=i){
+        //         var dx = this.pos.x-arr[i].pos.x;
+        //         var dy = this.pos.y-arr[i].pos.y;
+        //         dist = sqrt(sq(dx)+sq(dy));
+        //         if(dist <= (minDist)){
+        //             var tempx = this.dir.x;
+        //             var tempy = this.dir.y;
+        //             var tempdx = arr[i].dir.x;
+        //             var tempdy = arr[i].dir.y;
+        //             this.dir.x = tempdx;
+        //             this.dir.y = tempdy;
+        //             arr[i].dir.x = tempx;
+        //             arr[i].dir.y = tempy;
+        //             this.checkPlay();
+        //         }
+        //     }
+        // }
         if(this.pos.x>=windowWidth-radius || this.pos.x <= radius){
             this.dir.x *= -1;
             this.checkPlay();
