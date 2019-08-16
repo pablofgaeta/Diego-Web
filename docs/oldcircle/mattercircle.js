@@ -1,6 +1,5 @@
 class circleNav {
     constructor(pos, dir, page, index){
-        this.numplay=0;
         const options = {
             friction: 0,
             restitution: 1,
@@ -17,7 +16,15 @@ class circleNav {
         World.add(world, this.body);
         Matter.Body.setVelocity(this.body, p5.Vector.mult(dir, 25));
         this.body.label = page;
-        console.log(this.body);
+
+        this.circDiv = createElement('div', '');
+        this.circDiv.size(this.r*2, this.r*2);
+        this.circDiv.value(index);
+        this.circDiv.mouseOver(this.muteplay);
+    }
+
+    muteplay(){
+        mutedsounds[this.value()].play();
     }
 
     show(){
@@ -25,7 +32,6 @@ class circleNav {
         var hover = this.checkHover(this);
         push(); 
             if(hover){
-                // Matter.Body.setVelocity(this.body, p5.Vector.sub(this.body.velocity, .01));
                 if(this.body.motion < 10){
                     this.body.frictionAir = .05;
                 }
@@ -33,37 +39,23 @@ class circleNav {
                     this.Body.frictionAir = 1000;
                 }
                 fill(255,0,255);
-                if(this.checkPlay()){
-                    mutedsounds[this.index].play();
-                }
             }
             else {
                 this.body.frictionAir = 0;
                 fill(183, 174, 155);
             }
             translate(pos.x, pos.y);
+
+            this.circDiv.position(pos.x-this.r,pos.y-this.r);
+
             push();
             ellipse(0,0,this.r*2);
-            if(hover){ image(titles[this.index],0,0,this.r*3,this.r*3);}
+            if(hover){ 
+                image(titles[this.index],0,0,this.r*3,this.r*3);}
             pop();
+
             fill(255);
-
-            // var txts = this.r / 4;
-            // textAlign(CENTER, CENTER);
-            // textSize(txts);
-            // text(this.text,0,0);
         pop();
-    }
-
-    checkPlay(){
-        if(this.numplay <= 2){
-            this.numplay++;
-            return true;
-        }
-        if(!mutedsounds[this.index].isPlaying()){
-            this.numplay = 0;
-        }
-        return false;
     }
 
     checkHover(circ){

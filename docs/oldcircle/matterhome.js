@@ -20,7 +20,7 @@ function preload(){
         sounds[i]= loadSound("./newsounds/" + (i+1) + ".wav");
         mutedsounds[i]=loadSound("./newsounds/M"+(i+1)+".wav");
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
-        titles.push(loadImage("./page_titles/"+(i+1)+".png"));
+        titles.push(loadImage("./page_titles/"+(i+1)+"-0.png"));
     }
 }
 function setup() {
@@ -30,17 +30,17 @@ function setup() {
     engine = Engine.create();
     world = engine.world;
     world.gravity.y = 0;
-    world.bounds = {
-        min: {
-            x: 0,
-            y: 0
-        }, 
-        max: {
-            x: width,
-            y: height
-        }
+    // world.bounds = {
+    //     min: {
+    //         x: 0,
+    //         y: 0
+    //     }, 
+    //     max: {
+    //         x: width,
+    //         y: height
+    //     }
 
-    }
+    // }
 
     boundaries.push(new Boundary(width/2, 0, width, 10));
     boundaries.push(new Boundary(width/2, height-5, width, 10));
@@ -78,8 +78,8 @@ function draw() {
     }
     world.gravity.x = cos(frameCount/100)/50;
     world.gravity.y = sin(frameCount/100)/50;
-    // console.log(frameRate());
 }
+
 
 function windowResized() {
     resizeCanvas(windowWidth, windowHeight);
