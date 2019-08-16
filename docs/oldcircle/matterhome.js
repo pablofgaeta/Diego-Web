@@ -1,11 +1,13 @@
 let nav = [];
 let radius;
-let circleSpeed = 1.2;
-let pages = ["index", "contact", "perf", "bio", "insp", "index", "games"];
+let circleSpeed = .5;
+let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
 let sounds = [];
+let mutedsounds = [];
 let boundaries = [];
 let initvel = [];
 let initpos = [];
+var titles = [];
 
 var Engine = Matter.Engine,
     World = Matter.World,
@@ -15,12 +17,15 @@ var engine, world;
 
 function preload(){
     for(var i = 0; i<pages.length; i++){
-        sounds[i]= loadSound("./sounds/" + (i+1) + ".wav");
+        sounds[i]= loadSound("./newsounds/" + (i+1) + ".wav");
+        mutedsounds[i]=loadSound("./newsounds/M"+(i+1)+".wav");
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
+        titles.push(loadImage("./page_titles/"+(i+1)+".png"));
     }
 }
 function setup() {
     createCanvas(windowWidth, windowHeight);
+    imageMode(CENTER);
 
     engine = Engine.create();
     world = engine.world;
@@ -47,8 +52,9 @@ function setup() {
             pair = event.pairs[i];
             for(var j = 0; j<pages.length; j++){
                 if(pair.bodyA.label === pages[j] || pair.bodyB.label === pages[j]){
-                    if(!sounds[j].isPlaying())
-                    sounds[j].play();
+                    if(!sounds[j].isPlaying()){
+                        sounds[j].play();
+                    }
                 }
             }
         }
@@ -56,7 +62,7 @@ function setup() {
     
     radius = width > height ? (height / 10) : (width / 10);
     for(var i = 0; i<pages.length;i++){
-        nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),initvel[i], pages[i], sounds[i]);
+        nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),initvel[i], pages[i], i);
     }
 }
 
@@ -70,9 +76,9 @@ function draw() {
     for(var i = 0; i<boundaries.length;i++){
         boundaries[i].show();
     }
-    world.gravity.x = cos(frameCount/100)/20;
-    world.gravity.y = sin(frameCount/100)/20;
-    console.log(frameRate());
+    world.gravity.x = cos(frameCount/100)/50;
+    world.gravity.y = sin(frameCount/100)/50;
+    // console.log(frameRate());
 }
 
 function windowResized() {
@@ -89,7 +95,7 @@ function windowResized() {
 function mousePressed(){
     for(var i = 0; i<nav.length;i++){
         if(nav[i].checkHover(nav[i])){
-            window.top.location.href = "./" + nav[i].text + ".html";
+            window.top.location.href = "../" + nav[i].text + ".html";
         }
     }
 }

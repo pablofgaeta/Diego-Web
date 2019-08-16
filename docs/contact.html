@@ -37,10 +37,18 @@
         body {
             margin: 0px;
             padding: 0px;
-            /* background-image: url("bg.jpg"); */
-            background-color: black;
+            opacity: 1;
+            background: url("bg.jpg");
+            background-color: #F5E3CF;
             overflow: scroll;
+            /* animation: fadein 1s ease-in-out; */
         }
+        /* @keyframes fadein {
+            0% {background-color: black;
+                opacity: 0;}
+            100% {background-color: #F5E3CF;
+                opacity: 1;}
+        } */
         .vertpad {
             padding-top: 25px;
         }
@@ -115,15 +123,19 @@
                 <h5 class="links">
                     <a href="./index.html">home</a>
                     - 
-                    <a href="./perf.html">performances</a>
+                    <a href="./bio.html">biography</a>
                     - 
-                    <a href="./insp.html">inspiration</a>
+                    <a href="./performances.html">performances</a>
                     - 
-                    <a href="./bio.html">bio</a>
+                    <a href="./recorded.html">recorded music</a>
+                    - 
+                    <a href="./filmsound.html">filmsound</a>
+                    - 
+                    <a href="./inspirations.html">resources+inspiration</a>
+                    - 
+                    <a href="./journals.html">journals+images</a>
                     - 
                     <a href="./contact.html">contact</a>
-                    - 
-                    <a href="./games.html">games</a>
                 </h5>
                 <div class="vertpad"></div>
             </div>
@@ -138,7 +150,7 @@
 
         <!-- EMAIL FORM CENTERED WITH FIXED WIDTH-->
         <div class="d-flex justify-content-center" style="font-family: 'Work Sans', sans-serif;">
-            <div class="card-block transparent text-center" id="emailForm" style="width: 500px; box-shadow: 5px 10px 5; black" style="">
+            <div class="card-block transparent text-center" id="emailForm" style="width: 500px;">
                 <div class="card-header">Contact Form</div>
                 
                 <div class="card-body">

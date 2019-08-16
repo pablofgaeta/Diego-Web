@@ -2,6 +2,7 @@ var cols, rows;
 var scl = 50;
 var w;
 var h;
+let ball;
 
 var flying = 0;
 
@@ -19,6 +20,12 @@ function setup() {
     for (var y = 0; y < rows; y++) {
       terrain[x][y] = 0; //specify a default value for now
     }
+  }
+  ball = {
+    radius: 50,
+    xPos: 0,
+    zPos: 0,
+    yPos: height/2-100
   }
 }
 
@@ -45,15 +52,34 @@ function draw() {
     fill(yoff,0,yoff);
     
     for (var x = 0; x < cols; x++) {
-      // var filter = map(terrain[x][y-1], 0,100,0,40);
-      // var filter2 = map(terrain[x][y], 0,100,0,40);
-      // var filter3 = map(terrain[x][y+1], 0,100,0,100);
-
       vertex(x*scl, y*scl, terrain[x][y]);
       vertex(x*scl, (y+1)*scl, terrain[x][y+1]);
     }
     endShape();
   }
+  // if((ball.yPos) > -1000){
+  //   translate(w/2,h/2);
+  //   push();
+  //   fill(255,0,255);
+  //   var shift = 2;
+  //   if(keyIsDown(DOWN_ARROW)){
+  //     ball.yPos -= shift;
+  //   }
+  //   if(keyIsDown(UP_ARROW)){
+  //     ball.yPos += shift;
+  //   }
+  //   if(keyIsDown(LEFT_ARROW)){
+  //     ball.xPos -= shift;
+  //   }
+  //   if(keyIsDown(RIGHT_ARROW)){
+  //     ball.xPos += shift;
+  //   }
+  //   translate(ball.xPos,ball.zPos,ball.yPos);
+  //   noStroke();
+  //   normalMaterial();
+  //   sphere(ball.radius);
+  //   pop();
+  // }
 }
 
 function windowResized(){

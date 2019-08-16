@@ -23,18 +23,30 @@
     <!--
         TITLE
     -->
-    <title>Bio</title>
+    <title>resources+inspiration</title>
 
     <!--
         STYLES
     -->
     <style>
+        /* html, body{
+            height: 100%;
+        }
+        body {
+            margin: 0px;
+            padding: 0px;
+            background: url("./picbg.jpg");
+            background-position: center center;
+            background-size: cover;
+            background-color: black;
+            overflow: hidden;
+        } */
         body {
             margin: 0px;
             padding: 0px;
             background: url("http://www.oocities.com/heather_32087/background6.gif");
             background-color: black;
-            overflow: scroll;
+            overflow: hidden;
         }
         .vertpad {
             padding-top: 25px;
@@ -58,9 +70,15 @@
             position:absolute;
             display: block;
             margin: 0 auto;
-            height:80%;
+            height:86%;
             width:100%;
             border:0;
+            filter: hue-rotate(0deg);
+            animation: hueshift 10s infinite;
+        }
+
+        @keyframes hueshift {
+            50% {filter: hue-rotate(180deg);}
         }
         mark {
             background-color:rgba(143, 143, 143, 0.783);
@@ -94,16 +112,25 @@
     </style>
 </head>
 
-
-
 <!--
     BODY
 -->
 <body>
     <!-- HEAD -->
-    <div id="head">
-        <div class="header">biography</div>
-    </div>
+    <!-- <div class="container">
+        <div class="row justify-content-center">
+            <div class="col col-md-auto">
+                <img src="elbarto.gif" style="display: block; margin:auto;"></img>
+            </div>
+            <div class="col col-md-auto">
+                <div class="header">home</div>
+            </div>
+            <div class="col col-md-auto">
+                <img src="elbarto.gif" style="display: block; margin:auto;"></img>
+            </div>
+        </div>
+    </div> -->
+    <div class="header">resources+inspiration</div>
 
     <!-- NAV BAR -->
     <div class="pos-f-t">
@@ -134,8 +161,10 @@
             <span class="navbar-toggler-icon"></span>
           </button>
         </nav>
-        <div class="vertpad"></div>
     </div>
+    <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
+    <!-- <iframe src="./oldcircle/index3.html" id="circleArt" frameborder="0" ></iframe> -->
     
+
 </body>
 </html>
