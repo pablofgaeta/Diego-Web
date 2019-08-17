@@ -1,9 +1,12 @@
 body {
     margin: 0px;
     padding: 0px;
-    /* background-image: url("bg.jpg"); */
-    background-color: rgb(0, 0, 0);
+    background: url("http://www.oocities.com/heather_32087/background6.gif");
+    background-color: black;
     overflow: scroll;
+}
+::-webkit-scrollbar {
+    display: none;
 }
 .vertpad {
     padding-top: 25px;
@@ -13,24 +16,46 @@ body {
     text-align: center;
     font-family: "Work Sans", sans-serif;
     font-weight: 200;
-    font-size : 60px;
+    font-size : 8vw;
+    margin: 0 auto;
+    padding-left: 5vw;
+    padding-right: 5vw;
+    /* height:20vh; */
 }
 .links {
     color: rgb(255, 255, 255);
     font-family: "Work Sans", sans-serif;
     font-weight: 100;
-    font-size : 30px;
+    font-size : 3vw;
+    text-align : center;
     margin: 0 auto;
 }
-iframe {
+.homeArt iframe {
     position:absolute;
     display: block;
     margin: 0 auto;
-    height:83%;
-    width:100%;
+    height: 80%;
+    width: 100%;
     border:0;
+    filter: hue-rotate(0deg);
+    animation: hueshift 10s infinite;
 }
-
+.vimeo iframe {
+    display: block;
+    margin: 0 auto;
+}
+.carousel-item iframe {
+    display: block;
+    margin: 0 auto;
+    width: 70vw;
+    height:60vh;
+    border:0;
+    /* display: block;
+    margin: 0 auto; */
+}
+@keyframes hueshift {
+    50% {filter: hue-rotate(180deg);}
+}
 mark {
     background-color:rgba(143, 143, 143, 0.783);
 }
@@ -39,19 +64,24 @@ a:link {
     color: white;
     text-decoration: none;
 }
-
 /* visited link */
 a:visited {
     color: white;
     text-decoration: none;
 }
-
 /* mouse over link */
 a:hover {
     background-color: rgb(0, 0, 0);
     text-decoration: none;
 }
-
+.carousel a:hover {
+    background-color: rgb(0,0, 0, 0);
+    text-decoration: none;
+}
+.carousel-control-prev a:hover {
+    background-color: rgb(0,0,0,0);
+    text-decoration: none;
+}
 /* selected link */
 a:active {
     color: blue;
@@ -63,3 +93,22 @@ input:focus,
 textarea:focus {
     outline: none;
 }
+.carousel-inner {
+    margin: 0 auto;
+    height:72vh;
+}
+.wrap body {
+    margin: 0px;
+    padding: 0px;
+    opacity: 1;
+    background: url("bg.jpg");
+    background-color: #F5E3CF;
+    overflow: scroll;
+    /* animation: fadein 1s ease-in-out; */
+}
+/* @keyframes fadein {
+    0% {background-color: black;
+        opacity: 0;}
+    100% {background-color: #F5E3CF;
+        opacity: 1;}
+} */

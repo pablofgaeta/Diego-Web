@@ -33,88 +33,16 @@
     <!--
         STYLES
     -->
-    <style>
-        body {
-            margin: 0px;
-            padding: 0px;
-            opacity: 1;
-            background: url("bg.jpg");
-            background-color: #F5E3CF;
-            overflow: scroll;
-            /* animation: fadein 1s ease-in-out; */
-        }
-        /* @keyframes fadein {
-            0% {background-color: black;
-                opacity: 0;}
-            100% {background-color: #F5E3CF;
-                opacity: 1;}
-        } */
-        .vertpad {
-            padding-top: 25px;
-        }
-        .header {
-            color: rgb(255, 255, 255);
-            text-align: center;
-            font-family: "Work Sans", sans-serif;
-            font-weight: 200;
-            font-size : 60px;
-            margin: 0 auto;
-        }
-        .links {
-            color: rgb(255, 255, 255);
-            font-family: "Work Sans", sans-serif;
-            font-weight: 100;
-            font-size : 30px;
-            margin: 0 auto;
-        }
-        iframe {
-            position:absolute;
-            display: block;
-            margin: 0 auto;
-            height:80%;
-            width:100%;
-            border:0;
-        }
-        mark {
-            background-color:rgba(143, 143, 143, 0.783);
-        }
-        /* unvisited link */
-        a:link {
-            color: white;
-            text-decoration: none;
-        }
-        /* visited link */
-        a:visited {
-            color: white;
-            text-decoration: none;
-        }
-        /* mouse over link */
-        a:hover {
-            background-color: rgb(0, 0, 0);
-            text-decoration: none;
-        }
-        /* selected link */
-        a:active {
-            color: blue;
-            text-decoration: none;
-        }
-        a:focus,
-        button:focus,
-        input:focus,
-        textarea:focus {
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">         
 </head>
 
     <!--
         BODY
     -->
+<div class="wrap">
     <body>
         <!-- HEAD -->
-        <div id="head">
-            <div class="header">contact</div>
-        </div>
+        <div class="header">contact</div>
 
         <!-- NAV BAR -->
         <div class="pos-f-t">
@@ -150,7 +78,7 @@
 
         <!-- EMAIL FORM CENTERED WITH FIXED WIDTH-->
         <div class="d-flex justify-content-center" style="font-family: 'Work Sans', sans-serif;">
-            <div class="card-block transparent text-center" id="emailForm" style="width: 500px;">
+            <div class="card-block transparent text-center" id="emailForm" style="width: 500px;border-radius: 25px;background: url(bg.jpg);">
                 <div class="card-header">Contact Form</div>
                 
                 <div class="card-body">
@@ -182,4 +110,5 @@
         <!-- ADD OLD SCHOOL WEB EMAIL/GRAPHIC ANIMATIONS -->
         
     </body>
+</div>
 </html>

@@ -1,6 +1,6 @@
 let nav = [];
 let radius;
-let circleSpeed = .5;
+let circleSpeed = .8;
 let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
 let sounds = [];
 let mutedsounds = [];
@@ -18,7 +18,9 @@ var engine, world;
 function preload(){
     for(var i = 0; i<pages.length; i++){
         sounds[i]= loadSound("./newsounds/" + (i+1) + ".wav");
+        sounds[i].setVolume(.2);
         mutedsounds[i]=loadSound("./newsounds/M"+(i+1)+".wav");
+        mutedsounds[i].setVolume(.2);
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
         titles.push(loadImage("./page_titles/"+(i+1)+"-0.png"));
     }
@@ -62,7 +64,16 @@ function setup() {
     
     radius = width > height ? (height / 10) : (width / 10);
     for(var i = 0; i<pages.length;i++){
-        nav[i] = new circleNav(createVector((i%3+1)*width/4.0,(floor(i/3.0)*height/3)+height/3),initvel[i], pages[i], i);
+        nav[i] = new circleNav(createVector((i+1)/8*width,(height/2)),initvel[i], pages[i], i);
+    }
+    // noLoop();
+    if(frameCount%100==0){
+        resizeCanvas(windowWidth, windowHeight);
+        radius = width > height ? (height / 10) : (width / 10);
+        for(var i = 0; i<nav.length;i++){
+            nav[i].body.circleRadius = radius;
+            nav[i].radius = radius;
+        }
     }
 }
 
@@ -78,6 +89,7 @@ function draw() {
     }
     world.gravity.x = cos(frameCount/100)/50;
     world.gravity.y = sin(frameCount/100)/50;
+    
 }
 
 

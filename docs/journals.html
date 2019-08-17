@@ -28,88 +28,7 @@
     <!--
         STYLES
     -->
-    <style>
-        /* html, body{
-            height: 100%;
-        }
-        body {
-            margin: 0px;
-            padding: 0px;
-            background: url("./picbg.jpg");
-            background-position: center center;
-            background-size: cover;
-            background-color: black;
-            overflow: hidden;
-        } */
-        body {
-            margin: 0px;
-            padding: 0px;
-            background: url("http://www.oocities.com/heather_32087/background6.gif");
-            background-color: black;
-            overflow: hidden;
-        }
-        .vertpad {
-            padding-top: 25px;
-        }
-        .header {
-            color: rgb(255, 255, 255);
-            text-align: center;
-            font-family: "Work Sans", sans-serif;
-            font-weight: 200;
-            font-size : 60px;
-            margin: 0 auto;
-        }
-        .links {
-            color: rgb(255, 255, 255);
-            font-family: "Work Sans", sans-serif;
-            font-weight: 100;
-            font-size : 30px;
-            margin: 0 auto;
-        }
-        iframe {
-            position:absolute;
-            display: block;
-            margin: 0 auto;
-            height:86%;
-            width:100%;
-            border:0;
-            filter: hue-rotate(0deg);
-            animation: hueshift 10s infinite;
-        }
-
-        @keyframes hueshift {
-            50% {filter: hue-rotate(180deg);}
-        }
-        mark {
-            background-color:rgba(143, 143, 143, 0.783);
-        }
-        /* unvisited link */
-        a:link {
-            color: white;
-            text-decoration: none;
-        }
-        /* visited link */
-        a:visited {
-            color: white;
-            text-decoration: none;
-        }
-        /* mouse over link */
-        a:hover {
-            background-color: rgb(0, 0, 0);
-            text-decoration: none;
-        }
-        /* selected link */
-        a:active {
-            color: blue;
-            text-decoration: none;
-        }
-        a:focus,
-        button:focus,
-        input:focus,
-        textarea:focus {
-            outline: none;
-        }
-    </style>
+    <link rel="stylesheet" href="main.css">
 </head>
 
 <!--
@@ -148,7 +67,9 @@
           </button>
         </nav>
     </div>
-    <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
+    <div class="homeArt">
+        <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
+    </div>
     <!-- <iframe src="./oldcircle/index3.html" id="circleArt" frameborder="0" ></iframe> -->
     
 
