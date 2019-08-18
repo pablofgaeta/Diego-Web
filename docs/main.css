@@ -1,11 +1,3 @@
-body {
-    margin: 0px;
-    padding: 0px;
-    /* background: url("http://www.oocities.com/heather_32087/background6.gif"); */
-    background: url("http://www.geocities.ws/bandarlaundry/images/clouds.jpg");    
-    background-color: black;
-    overflow: scroll;
-}
 ::-webkit-scrollbar {
     display: none;
 }
@@ -53,6 +45,14 @@ body {
     text-align : center;
     margin: 0 auto;
 }
+.audiolinks iframe{
+    display: block;
+    margin: 0 auto;
+}
+.audiolinks audio{
+    display: block;
+    margin: 0 auto;
+}
 img.bioimg{
     position:absolute;
 }
@@ -66,15 +66,20 @@ img.gif {
     position:fixed;
     display: block;
 }
-/* .homeArt iframe{
-    position:sticky;
+.homeArt iframe{
+    position: sticky;
     display: block;
     margin: 0 auto;
-    height: 80vh;
+    bottom: 10vh;
+    height: 30vh;
     width: 100vw;
     filter: hue-rotate(0deg);
     animation: hueshift 10s infinite;
-} */
+}
+.circle iframe {
+    filter: hue-rotate(0deg);
+    animation: hueshift 10s infinite;
+}
 iframe.sticky{
     position: -webkit-sticky;
     position:fixed;

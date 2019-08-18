@@ -42,7 +42,7 @@ class circleNav {
             }
             else {
                 this.body.frictionAir = 0;
-                fill(183, 174, 155);
+                fill(255, 255, 255);
             }
             translate(pos.x, pos.y);
 
