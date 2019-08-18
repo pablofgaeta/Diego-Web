@@ -29,48 +29,32 @@
         STYLES
     -->
     <link rel="stylesheet" href="main.css">
+    <script src="navbar.js"></script>
 </head>
 
 <!--
     BODY
 -->
 <body>
-    <div class="header">journals+images</div>
+    
+    <div class="header" id="head">journals+images</div>
 
     <!-- NAV BAR -->
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="navbar-nav navbar-dark" style="background-color: #ffffff00;">
-            <h5 class="links">
-                <a href="./index.html">home</a>
-                 - 
-                <a href="./bio.html">biography</a>
-                 - 
-                <a href="./performances.html">performances</a>
-                 - 
-                <a href="./recorded.html">recorded music</a>
-                 - 
-                <a href="./filmsound.html">filmsound</a>
-                 - 
-                <a href="./inspirations.html">resources+inspiration</a>
-                 - 
-                <a href="./journals.html">journals+images</a>
-                 - 
-                <a href="./contact.html">contact</a>
-            </h5>
-            <div class="vertpad"></div>
-          </div>
-        </div>
-        <nav class="navbar-nav navbar-dark" style="background-color: #ffffff00;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
+    <script>addNavbar();</script>
+
+    <div class="vertpad"></div>
+
+    <!-- <div class="homeArt">
+        <iframe class="sticky"src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
+    </div> -->
+
+    <div class="journalimg">
+        <img src="./journal/11202860_10205712478388642_2445580255863598089_n.jpg"></img>
+        <div class="vertpad"></div>
+        <img src="./journal/16107560_10209890797083998_8647629181462000024_o.jpg"></img>
     </div>
-    <div class="homeArt">
-        <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
-    </div>
-    <!-- <iframe src="./oldcircle/index3.html" id="circleArt" frameborder="0" ></iframe> -->
+
+    
     
 
 </body>

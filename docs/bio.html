@@ -29,8 +29,25 @@
         STYLES
     -->
     <link rel="stylesheet" href="main.css">
-</head>
+    <script src="navbar.js"></script> 
 
+    <script>
+        function playTag(){
+            var tag = document.getElementById("tag");
+            tag.volume = .3;
+            tag.play();
+        }
+        function playSong(){
+            var tag = document.getElementById("song");
+            tag.volume = .5;
+            tag.play();
+        }
+        function pauseSong(){
+            var tag = document.getElementById("song");
+            tag.pause();
+        }
+    </script>
+</head>
 
 
 <!--
@@ -38,41 +55,31 @@
 -->
 <body>
     <!-- HEAD -->
-    <div class="header">biography</div>
+    <div class="header" id="head">biography</div>
+
+    <audio src="./AUDIO/CLUBDG.wav" id="tag" type="audio/wav"></audio>
+    <audio src="./AUDIO/rivulet.mp3" id="song" type="audio/mp3"></audio>    
 
     <!-- NAV BAR -->
-    <div class="pos-f-t">
-        <div class="collapse" id="navbarToggleExternalContent">
-          <div class="navbar-nav navbar-dark" style="background-color: #ffffff00;">
-            <h5 class="links">
-                <a href="./index.html">home</a>
-                 - 
-                <a href="./bio.html">biography</a>
-                 - 
-                <a href="./performances.html">performances</a>
-                 - 
-                <a href="./recorded.html">recorded music</a>
-                 - 
-                <a href="./filmsound.html">filmsound</a>
-                 - 
-                <a href="./inspirations.html">resources+inspiration</a>
-                 - 
-                <a href="./journals.html">journals+images</a>
-                 - 
-                <a href="./contact.html">contact</a>
-            </h5>
-            <div class="vertpad"></div>
-          </div>
-        </div>
-        <nav class="navbar-nav navbar-dark" style="background-color: #ffffff00;">
-          <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarToggleExternalContent" aria-controls="navbarToggleExternalContent" aria-expanded="false" aria-label="Toggle navigation">
-            <span class="navbar-toggler-icon"></span>
-          </button>
-        </nav>
-        <div class="vertpad"></div>
+    <script>addNavbar();</script>
+
+    <div class="vertpad"></div>
+    <div class="picoutline">
+        <img class="bioimg" src="./bio images/P1030274.jpg" style="left: 5vw; width: 40vw"></img>
+        <img class="bioimg" src="./gifs/kushpuppy1.png" style="left: 48vw; height: 6vw; top: 30vh;" onclick="playTag()"></img>
+        <img class="bioimg" src="./gifs/kushpuppy2.png" style="left: 47vw; height: 6vw; top: 42vh;" onclick="playSong()"></img>
+        <img class="bioimg" src="./gifs/kushpuppy3.png" style="left: 47vw; height: 6vw; top: 55vh;" onclick="pauseSong()"></img>        
+        <img class="bioimg" src="./bio images/P1030896.jpg" id = "img" style="right:5vw; width: 40vw"></img>
+        <!-- ratio is 61.976%-->
     </div>
-    <div class="homeArt">
-        <iframe src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
-    </div>
+
+    <!-- <text class="txt" id="text">helloworld</textarea> -->
+
+    <img class="txt" src="./bio images/bio description.jpg" style="width:80vw"></img>
+    <!-- <div class="vertpad2"></div> -->
+    <!-- <img class="gif" src="./gifs/kushpuppy1.png" style="bottom: 0; height: 8vh"></img> -->
+
+
+
 </body>
 </html>

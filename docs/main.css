@@ -1,7 +1,8 @@
 body {
     margin: 0px;
     padding: 0px;
-    background: url("http://www.oocities.com/heather_32087/background6.gif");
+    /* background: url("http://www.oocities.com/heather_32087/background6.gif"); */
+    background: url("http://www.geocities.ws/bandarlaundry/images/clouds.jpg");    
     background-color: black;
     overflow: scroll;
 }
@@ -9,6 +10,11 @@ body {
     display: none;
 }
 .vertpad {
+    padding-top: 25px;
+}
+.vertpad2 {
+    position: absolute;
+    bottom: 0;
     padding-top: 25px;
 }
 .header {
@@ -22,6 +28,23 @@ body {
     padding-right: 5vw;
     /* height:20vh; */
 }
+.txt {
+    position: absolute;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    top: 80%;
+    /* height: 50%;
+    width: 50%; */
+    left: 0;
+    right: 0;
+    color: rgb(255, 255, 255);
+    text-align: center;
+    font-family: "Work Sans", sans-serif;
+    font-weight: 200;
+    font-size : 8vw;
+
+}
 .links {
     color: rgb(255, 255, 255);
     font-family: "Work Sans", sans-serif;
@@ -30,15 +53,34 @@ body {
     text-align : center;
     margin: 0 auto;
 }
-.homeArt iframe {
+img.bioimg{
     position:absolute;
+}
+.journalimg img {
+    display: block;
+    width: 40vw;
+    margin-left: auto;
+    margin-right: auto;
+}
+img.gif {
+    position:fixed;
+    display: block;
+}
+/* .homeArt iframe{
+    position:sticky;
     display: block;
     margin: 0 auto;
-    height: 80%;
-    width: 100%;
-    border:0;
+    height: 80vh;
+    width: 100vw;
     filter: hue-rotate(0deg);
     animation: hueshift 10s infinite;
+} */
+iframe.sticky{
+    position: -webkit-sticky;
+    position:fixed;
+    bottom:0;
+    width: 100vw;
+    height: 40vh;
 }
 .vimeo iframe {
     display: block;
