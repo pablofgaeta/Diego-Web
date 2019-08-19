@@ -1,12 +1,16 @@
+/* Hide scrollbar */
 ::-webkit-scrollbar {
     display: none;
 }
+/* quick vert padding */
 .vertpad {
     padding-top: 25px;
 }
+/* wrapper div for center */
 .center{
     text-align: center;
 }
+/* Header specs */
 .header {
     color: rgb(255, 255, 255);
     text-align: center;
@@ -14,32 +18,13 @@
     font-weight: 200;
     font-size : 8vw;
     margin: 0 auto;
-    padding-left: 5vw;
-    padding-right: 5vw;
-    /* height:20vh; */
 }
-.txt {
-    position: absolute;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    top: 80%;
-    /* height: 50%;
-    width: 50%; */
-    left: 0;
-    right: 0;
-    color: rgb(255, 255, 255);
-    text-align: center;
-    font-family: "Work Sans", sans-serif;
-    font-weight: 200;
-    font-size : 8vw;
-
-}
+/* Link specs */
 .links {
     color: rgb(255, 255, 255);
     font-family: "Work Sans", sans-serif;
     font-weight: 100;
-    font-size : 3vw;
+    font-size : 20px;
     text-align : center;
     margin: 0 auto;
 }
@@ -92,9 +77,7 @@ iframe.sticky{
     width: 70vw;
     height:60vh;
     border:0;
-    /* display: block;
-    margin: 0 auto; */
-}
+} 
 @keyframes hueshift {
     50% {filter: hue-rotate(180deg);}
 }
@@ -120,10 +103,6 @@ a:hover {
     background-color: rgb(0,0, 0, 0);
     text-decoration: none;
 }
-.carousel-control-prev a:hover {
-    background-color: rgb(0,0,0,0);
-    text-decoration: none;
-}
 /* selected link */
 a:active {
     color: blue;
@@ -138,15 +117,6 @@ textarea:focus {
 .carousel-inner {
     margin: 0 auto;
     height:72vh;
-}
-.wrap body {
-    margin: 0px;
-    padding: 0px;
-    opacity: 1;
-    background: url("bg.jpg");
-    background-color: #F5E3CF;
-    overflow: scroll;
-    /* animation: fadein 1s ease-in-out; */
 }
 /* @keyframes fadein {
     0% {background-color: black;
