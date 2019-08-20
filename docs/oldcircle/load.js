@@ -35,9 +35,12 @@ if (!mob)
         js[i].src = names[i];
         head.appendChild(js[i]);
     }
+   document.body.style.backgroundImage = url("bg.jpg");
 }
 else
 {
+   document.body.style.backgroundImage = url("elbarto.gif");
+    alert('mobil');
     var song = document.getElementById("song");
     song.volume = .5;
     song.play();
