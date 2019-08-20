@@ -35,6 +35,10 @@ if (!mob)
         js[i].src = names[i];
         head.appendChild(js[i]);
     }
+    // js[0] = document.createElement("script");
+    // js[0].type = "text/javascript";
+    // js[0].src = "./sound.js";
+    // head.appendChild(js[0]);
 }
 else
 {

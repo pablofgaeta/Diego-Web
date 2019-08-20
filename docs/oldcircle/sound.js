@@ -1,25 +1,40 @@
 var sound;
-let play;
-let playing;
+let play, pause, play2;
 let cnv;
 
 function preload(){
     sound = loadSound("../AUDIO/cherish\ love.mp3");
-    play = loadImage("../gifs/play.png");
-    pause = loadImage("../gifs/pause.png");
+    // play2 = loadImage("../gifs/play.png");
+    // pause = loadImage("../gifs/pause.png");
+    play = createImg("../gifs/play.png");
+    pause = createImg("../gifs/pause.png");
 }
 function setup(){
     cnv = createCanvas(windowWidth, windowHeight);
-    imageMode(CENTER);
-    playing = false;
-
+    play.style('display', 'none');
+    pause.style('display', 'none');
+    play.size(width/4, AUTO);
+    pause.size(width/4, AUTO);
+    play.mousePressed(playme);
+    play.touchStarted(playme);
+    pause.mousePressed(playme);
+    pause.touchStarted(playme);
 }
 function draw(){
     clear();
-    image(play, width/2, height/2, width/4, width/4);
+    if(sound.isPlaying()){
+        play.hide();
+        pause.show();
+        pause.center();
+    }
+    else{
+        pause.hide();
+        play.show();
+        play.center();
+    }
 }
 
-function touchStarted(){
+function playme(){
     if(!sound.isPlaying()){
         sound.play();
     }
@@ -27,6 +42,14 @@ function touchStarted(){
         sound.pause();
     }
 }
+// function mousePressed(){
+//     if(!sound.isPlaying()){
+//         sound.play();
+//     }
+//     else{
+//         sound.pause();
+//     }
+// }
 
 // function touchStarted(){
 //     if(!playing){
