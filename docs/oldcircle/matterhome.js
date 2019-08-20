@@ -3,11 +3,34 @@ let radius;
 let circleSpeed = .8;
 let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
 let sounds = [];
+let song;
 let mutedsounds = [];
 let boundaries = [];
 let initvel = [];
 let initpos = [];
 var titles = [];
+
+let mob;
+var isMobile = {
+    Android: function() {
+        return navigator.userAgent.match(/Android/i);
+    },
+    BlackBerry: function() {
+        return navigator.userAgent.match(/BlackBerry/i);
+    },
+    iOS: function() {
+        return navigator.userAgent.match(/iPhone|iPad|iPod/i);
+    },
+    Opera: function() {
+        return navigator.userAgent.match(/Opera Mini/i);
+    },
+    Windows: function() {
+        return navigator.userAgent.match(/IEMobile/i);
+    },
+    any: function() {
+        return (isMobile.Android() || isMobile.BlackBerry() || isMobile.iOS() || isMobile.Opera() || isMobile.Windows());
+    }
+};
 
 var Engine = Matter.Engine,
     World = Matter.World,
@@ -24,10 +47,13 @@ function preload(){
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
         titles.push(loadImage("./page_titles/"+(i+1)+"-0.png"));
     }
+    song = loadSound("../AUDIO/cherish\ love.mp3");
 }
 function setup() {
     createCanvas(windowWidth, windowHeight);
     imageMode(CENTER);
+
+    mob = isMobile.any();
 
     engine = Engine.create();
     world = engine.world;
@@ -75,21 +101,26 @@ function setup() {
             nav[i].radius = radius;
         }
     }
+    if(mob){
+        alert('Mobile');
+        song.play();
+    }
 }
 
 function draw() {
-    clear();
-    noStroke();
-    Engine.update(engine);
-    for(var i = 0; i<nav.length;i++){
-        nav[i].show();
+    if(!mob){
+        clear();
+        noStroke();
+        Engine.update(engine);
+        for(var i = 0; i<nav.length;i++){
+            nav[i].show();
+        }
+        for(var i = 0; i<boundaries.length;i++){
+            boundaries[i].show();
+        }
+        world.gravity.x = cos(frameCount/100)/50;
+        world.gravity.y = sin(frameCount/100)/50;
     }
-    for(var i = 0; i<boundaries.length;i++){
-        boundaries[i].show();
-    }
-    world.gravity.x = cos(frameCount/100)/50;
-    world.gravity.y = sin(frameCount/100)/50;
-    
 }
 
 
