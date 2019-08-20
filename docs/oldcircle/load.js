@@ -39,9 +39,17 @@ if (!mob)
 else
 {
     // alert('mobil');
-    var song = document.createElement("audio");
-    song.type = "audio/mp3"
-    song.src ="../AUDIO/cherish love.mp3";
-    song.volume = .5;
-    song.play();
+    // var song = document.createElement("audio");
+    // song.type = "audio/mp3"
+    // song.src ="../AUDIO/cherish love.mp3";
+    // song.volume = .5;
+    // var img = document.createElement("img");
+    // img.src = "../elbarto.gif";
+    // img.onclick = function() {
+    //     song.play();
+    // };
+    js[0] = document.createElement("script");
+    js[0].type = "text/javascript";
+    js[0].src = "./sound.js";
+    head.appendChild(js[0]);
 }
