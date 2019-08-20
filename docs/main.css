@@ -53,7 +53,7 @@
 }
 img.emailgif{
     position: absolute; 
-    width: 20vw;
+    width: 10vw;
     top:50%; 
     transform: translateY(-50%);
 }
@@ -151,6 +151,7 @@ textarea:focus {
     100% {background-color: #F5E3CF;
         opacity: 1;}
 } */
+
 @media only screen and (max-width: 700px) {
     .emailgif {
         display: none;
