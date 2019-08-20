@@ -52,55 +52,68 @@
     -->
 <div class="wrap">
     <body>
-        <img class="gif" src="./gifs/email06.gif" style="top:2vw;left:2vw;height:8vw;"></img>
-        <img class="gif" src="./gifs/email06.gif" style="top:2vw;right:2vw;height:8vw;"></img>
-        <img class="gif" src="./gifs/email-1.gif" style="top:50vh;left:2vw;height:5vw;"></img>
-        <img class="gif" src="./gifs/email.gif" style="top:50vh;right:2vw;height:8vw;"></img>
+        <div class="center">
+            <div class="header" id='head'>
+                <img src="./gifs/email06.gif" style="left:10vw;"></img>
+                contact
+                <img src="./gifs/email06.gif" style="right: 10vw;"></img>
+            </div>
+            
+        </div>
+        <!-- <div class="center" style="height:5vh;">
+           <div class="tree" id="tree"></div>
+        </div> -->
 
+        <div class="center" id="tree">
+            <img class="tree" id="lil" src="./gifs/isles.gif"></img>
+            <div class="vertpad"></div>
+        </div>
         
 
-        <!-- HEAD -->
-        <div class="header" id='head'>contact</div>
         
         <!-- NAV BAR -->
+
         <script>addNavbar();</script>
 
         <div class="vertpad"></div>
         
-
-        <!-- EMAIL FORM CENTERED WITH FIXED WIDTH-->
-        <div class="d-flex justify-content-center" style="font-family: 'Work Sans', sans-serif;">
-            <div class="card-block transparent text-center" id="emailForm" style="width: 500px;background: url('http://www.geocities.ws/bandarlaundry/images/clouds.jpg')">
-                <div class="card-header">Contact Form</div>
-                
-                <div class="card-body">
-                    <form action="https://formspree.io/pablofgaeta@gmail.com" method="POST">
-                        <div class="form-group">
-                            <label for="fullname">Full Name</label>
-                            <input type="text" class="form-control" id="fullname" placeholder="First Last" name="Name">
-                        </div>
-                        <div class="form-group">
-                            <label for="email-address">Email address</label>
-                            <input type="email" class="form-control" id="email-address" placeholder="name@example.com" name="Email">
-                        </div>
-                        <div class="form-group">
-                            <label for="email-subject">Subject</label>
-                            <input type="text" class="form-control" id="email-subject" placeholder="Subject" name="Subject">
-                        </div>
-                        <div class="form-group">
-                            <label for="message">Message</label>
-                            <textarea type="text" class="form-control" class="text-muted" id="message" rows="3" placeholder="Your Message..." name="Message"></textarea>
-                        </div>
-                        <input class="btn btn-primary" type="submit" value="Send" onclick="newMail()">
-                    </form>
+        <div class="center" style="height:auto;">
+            <img class="emailgif" src="./gifs/email-1.gif" style="left:2.5vw;"></img>             
+            <div class="justify-content-center" style="font-family: 'Work Sans', sans-serif;width: auto;display:inline-flex;">
+                <div class="card-block transparent text-center" id="emailForm" style="width: 50vw; height: auto;background: url('http://www.geocities.ws/bandarlaundry/images/clouds.jpg')">
+                    <div class="card-header">Contact Form</div>
+                    
+                    <div class="card-body">
+                        <form action="https://formspree.io/pablofgaeta@gmail.com" method="POST">
+                            <div class="form-group">
+                                <label for="fullname">Full Name</label>
+                                <input type="text" class="form-control" id="fullname" placeholder="First Last" name="Name">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-address">Email address</label>
+                                <input type="email" class="form-control" id="email-address" placeholder="name@example.com" name="Email">
+                            </div>
+                            <div class="form-group">
+                                <label for="email-subject">Subject</label>
+                                <input type="text" class="form-control" id="email-subject" placeholder="Subject" name="Subject">
+                            </div>
+                            <div class="form-group">
+                                <label for="message">Message</label>
+                                <textarea type="text" class="form-control" class="text-muted" id="message" rows="3" placeholder="Your Message..." name="Message"></textarea>
+                            </div>
+                            <input class="btn btn-primary" type="submit" value="Send" onclick="newMail()">
+                        </form>
+                    </div>
                 </div>
             </div>
+            <img class="emailgif" src="./gifs/email.gif" style="right:2.5vw;"></img>             
         </div>
+        <!-- EMAIL FORM CENTERED WITH FIXED WIDTH-->
+        
 
         <div class="vertpad"></div>
-        <img class="gif" src="./gifs/isles.gif" style="bottom:0;width:100%;"></img>
-
-
+        <div class="vertpad"></div>
+        <div class="vertpad"></div>
         
 
         <!-- ADD OLD SCHOOL WEB EMAIL/GRAPHIC ANIMATIONS -->

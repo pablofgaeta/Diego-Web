@@ -51,7 +51,8 @@ class circleNav {
             push();
             ellipse(0,0,this.r*2);
             if(hover){ 
-                image(titles[this.index],0,0,this.r*3,this.r*3);}
+                image(titles[this.index],0,0,this.r*3,this.r*3);
+            }
             pop();
 
             fill(255);
