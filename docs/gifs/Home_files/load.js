@@ -21,10 +21,10 @@ var isMobile = {
 
 let mob = isMobile.any();
 
-var head = document.getElementsByTagName('head')[0];
-var names = ["matterhome.js",
-            "mattercircle.js",
-            "boundary.js"];
+var body = document.getElementById("bigbod");
+var names = ["./oldcircle/matterhome.js",
+            "./oldcircle/mattercircle.js",
+            "./oldcircle/boundary.js"];
 var js = [];
 
 if (!mob)
@@ -33,15 +33,18 @@ if (!mob)
         js[i] = document.createElement("script");
         js[i].type = "text/javascript";
         js[i].src = names[i];
-        head.appendChild(js[i]);
+        // document.body.appendChild(js[i]);
     }
+//    document.body.style.backgroundImage = "url('../contactbg.jpg')";
 }
 else
 {
-    // alert('mobil');
-    var song = document.createElement("audio");
-    song.type = "audio/mp3"
-    song.src ="../AUDIO/cherish love.mp3";
+   document.body.style.backgroundImage = "url('../elbarto.gif')";
+    alert('mobil');
+    var song = document.getElementById("song");
     song.volume = .5;
     song.play();
 }
+
+
+
