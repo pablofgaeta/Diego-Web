@@ -185,6 +185,12 @@ button:active {
     .emailgif {
         display: none;
     }
+    .audiolinks iframe {
+        width: 80%;
+    }
+    .stackframe {
+        width: 80%;
+    }
 }
 
 .gallery {
@@ -213,12 +219,6 @@ button:active {
         -webkit-column-width: 100%;
         -moz-column-width: 100%;
         column-width: 100%;
-    }
-    .audiolinks iframe {
-        width: 80%;
-    }
-    .stackframe {
-        width: 80%;
     }
 }
 
