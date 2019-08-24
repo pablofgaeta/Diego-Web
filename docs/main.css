@@ -40,6 +40,12 @@
 .audiolinks {
     text-align: center;
 }
+.stackframe {
+    position:relative;
+    height: 350px;
+    width: 40%;
+    display: inline-block;
+}
 .audiolinks audio{
     display: block;
     margin: 0 auto;
@@ -83,6 +89,9 @@ img.sticky{
     filter: hue-rotate(0deg);
     animation: hueshift 10s infinite; 
 }
+.stackframe iframe {
+    position: absolute;
+}
 .circle iframe {
     /* position: absolute;
     top: 0; */
@@ -92,7 +101,7 @@ img.sticky{
 .audiolinks iframe{
     display: inline-block;
     width: 40%;
-    height: 175px;
+    height: 170px;
     /* display: block;
     margin: 0 auto; */
 }
@@ -154,7 +163,8 @@ a:active {
 a:focus,
 button:focus,
 input:focus,
-textarea:focus {
+textarea:focus,
+audio:focus {
     outline: none;
 }
 button:active {
