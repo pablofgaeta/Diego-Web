@@ -14,6 +14,7 @@
     <!--BOOTSTRAP-->
     <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
     <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
+    <script src="https://code.jquery.com/jquery-3.4.1.min.js" crossorigin="anonymous"></script>
     <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
     <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>  
     <!--ICONS-->
@@ -41,6 +42,20 @@
             overflow: scroll;
         }
     </style>
+    <script>
+    $(function() {
+        var selectedClass = "";
+        $(".filter").click(function(){
+            selectedClass = $(this).attr("data-rel");
+            $("#gallery").fadeTo(100, 0.1);
+            $("#gallery div").not("."+selectedClass).fadeOut().removeClass('animation');
+            setTimeout(function() {
+            $("."+selectedClass).fadeIn().addClass('animation');
+            $("#gallery").fadeTo(300, 1);
+            }, 300);
+        });
+    });
+    </script>
 </head>
 
 <!--
@@ -59,11 +74,125 @@
         <iframe class="sticky"src="./3d/index.html" id="circleArt" frameborder="0" ></iframe>
     </div> -->
 
-    <div class="journalimg">
+    <!-- Grid row -->
+<div class="row">
+
+    <!-- Grid column -->
+    <div class="col-md-12 d-flex justify-content-center mb-5">
+  
+      <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="all">all</button>
+      <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="1">posters</button>
+      <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="2">diego</button>
+      <button type="button" class="btn btn-outline-black waves-effect filter" data-rel="3">art</button>
+
+  
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+  <!-- Grid row -->
+  
+  <!-- Grid row -->
+  <div class="gallery text-center" id="gallery">
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="./journal/11202860_10205712478388642_2445580255863598089_n.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="./journal/16107560_10209890797083998_8647629181462000024_o.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 3">
+      <img class="img-fluid" src="./journal/67646389_439178160005543_5630291023671328768_n.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/Banner (1).jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 3">
+      <img class="img-fluid" src="./journal/L1010705.JPG" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 3">
+      <img class="img-fluid" src="./journal/MY FAV GUAPAMACATARO PIC.JPG" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/Poster (1).jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+    
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="./journal/Screen Shot 2019-07-16 at 12.48.08 AM.png" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/Screen Shot 2019-08-07 at 11.16.35 PM.png" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 3">
+      <img class="img-fluid" src="./journal/The Wretch... Diego Title.png" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/final_flyer_1319 (1).jpeg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+    
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/flyeroctober18th.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 1">
+      <img class="img-fluid" src="./journal/flyersept7v2.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+    
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 3">
+      <img class="img-fluid" src="./journal/tho..jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+
+    <!-- Grid column -->
+    <div class="mb-3 pics animation all 2">
+      <img class="img-fluid" src="./journal/tunnel.jpg" alt="Card image cap">
+    </div>
+    <!-- Grid column -->
+  
+  </div>
+  <!-- Grid row -->
+
+    <!-- <div class="journalimg">
         <img src="./journal/11202860_10205712478388642_2445580255863598089_n.jpg"></img>
         <div class="vertpad"></div>
         <img src="./journal/16107560_10209890797083998_8647629181462000024_o.jpg"></img>
-    </div>
+    </div> -->
 
     
     
