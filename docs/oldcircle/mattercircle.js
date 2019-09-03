@@ -49,7 +49,12 @@ class circleNav {
             this.circDiv.position(pos.x-this.r,pos.y-this.r);
 
             push();
-            ellipse(0,0,this.r*2);
+            // fill(0,0,0,0);
+            // stroke('red');
+            // strokeWeight(5);
+            // ellipse(0,0,this.r*2);
+            
+            image(circimgs[this.index], 0,0, this.r*2,this.r*2);
             if(hover){ 
                 image(titles[this.index],0,0,this.r*3,this.r*3);
             }

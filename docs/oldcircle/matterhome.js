@@ -1,9 +1,12 @@
 let nav = [];
 let radius;
 let circleSpeed = .8;
+
 let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
 let sounds = [];
 let mutedsounds = [];
+let circimgs = [];
+
 let boundaries = [];
 let initvel = [];
 let initpos = [];
@@ -22,6 +25,7 @@ function preload(){
         sounds[i].setVolume(.2);
         mutedsounds[i]=loadSound("./newsounds/M"+(i+1)+".wav");
         mutedsounds[i].setVolume(.2);
+        circimgs[i] = loadImage("./pngs/DiegoCircle_" + (i+1) + ".png");
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
         titles.push(loadImage("./page_titles/"+(i+1)+"-0.png"));
     }
