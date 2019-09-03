@@ -34,6 +34,8 @@ function setup() {
     createCanvas(windowWidth, windowHeight);
     imageMode(CENTER);
 
+    radius = width > height ? (height / 10) : (width / 10);
+
 
     engine = Engine.create();
     world = engine.world;
@@ -50,10 +52,10 @@ function setup() {
 
     // }
 
-    boundaries.push(new Boundary(width/2, 0, width, 10));
-    boundaries.push(new Boundary(width/2, height-5, width, 10));
-    boundaries.push(new Boundary(0, height/2, 10, height));
-    boundaries.push(new Boundary(width-5, height/2, 10, width));
+    boundaries.push(new Boundary(width/2, 0, width, radius));
+    boundaries.push(new Boundary(width / 2, height - 5, width, radius));
+    boundaries.push(new Boundary(0, height / 2,  radius, height));
+    boundaries.push(new Boundary(width - 5, height / 2, radius, width));
 
     Matter.Events.on(engine, "collisionStart", function(event){
         for(var i = 0; i<event.pairs.length; i++){
@@ -68,7 +70,6 @@ function setup() {
         }
     });
     
-    radius = width > height ? (height / 10) : (width / 10);
     for(var i = 0; i<pages.length;i++){
         nav[i] = new circleNav(createVector((i+1)/8*width,(height/2)),initvel[i], pages[i], i);
     }

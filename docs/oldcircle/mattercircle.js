@@ -29,7 +29,7 @@ class circleNav {
 
     show(){
         var pos = this.body.position;
-        var hover = this.checkHover(this);
+        var hover = this.checkHover();
         push(); 
             if(hover){
                 if(this.body.motion < 10){
@@ -54,7 +54,7 @@ class circleNav {
             // strokeWeight(5);
             // ellipse(0,0,this.r*2);
             
-            image(circimgs[this.index], 0,0, this.r*2,this.r*2);
+            image(circimgs[this.index],0,0, this.r*2,this.r*2);
             if(hover){ 
                 image(titles[this.index],0,0,this.r*3,this.r*3);
             }
@@ -64,7 +64,7 @@ class circleNav {
         pop();
     }
 
-    checkHover(circ){
+    checkHover(){
         if(mouseX <= (this.body.position.x + this.r) && mouseX >= (this.body.position.x - this.r) && mouseY <= (this.body.position.y + this.r) && mouseY >= (this.body.position.y - this.r)){
             return true;
         }
