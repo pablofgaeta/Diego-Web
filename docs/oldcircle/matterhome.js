@@ -25,7 +25,7 @@ function preload(){
         sounds[i].setVolume(.2);
         mutedsounds[i]=loadSound("./newsounds/M"+(i+1)+".wav");
         mutedsounds[i].setVolume(.2);
-        circimgs[i] = loadImage("./pngs/DiegoCircle_" + (i+1) + ".png");
+        circimgs[i] = loadImage("./pngs/links/DiegoCircle_" + (i+1) + ".png");
         initvel.push(createVector(random(-.1*circleSpeed,.1*circleSpeed), random(-.1*circleSpeed,.1*circleSpeed)));
         titles.push(loadImage("./page_titles/"+(i+1)+"-0.png"));
     }
