@@ -211,6 +211,55 @@ button:active {
     transform: scale(1); 
 }
 
+.sidenav {
+    width: 30vw;
+    position: fixed;
+    z-index: 1;
+    left: 2vw;
+    background: #eee;
+    overflow-x: hidden;
+}
+
+.sidenav div {
+    text-align: center;
+    text-decoration: none;
+    font-size: 25px;
+    color: #2196F3;
+    display: block;
+}
+.sidenav a {
+    padding-left: 5%;
+    text-decoration: none;
+    font-size: 18px;
+    color: black;
+    display: block;
+}
+
+.sidenav a:hover {
+    background-color: rgba(96, 181, 250, 0.63);
+}
+
+.performance-container {
+    max-width: 66vw;
+    margin-right: 0;
+    margin-left: 32vw; /* Same width as the sidebar + left position in px */
+    font-size: 28px; /* Increased text to enable scrolling */
+    padding-left: 2vw;
+}
+
+.performance-container img {
+    width: 100%;
+}
+
+.performance-container iframe {
+    width: 100%;
+}
+
+@media screen and (max-height: 450px) {
+    .sidenav div {font-size: 18px;}
+    .sidenav a {font-size: 14px;}
+}
+
 @media (max-width: 450px) {
     .gallery {
         -webkit-column-count: 1;

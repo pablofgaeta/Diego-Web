@@ -41,6 +41,8 @@
             overflow: scroll;
         }
     </style>
+
+    
 </head>
 
 <!--
@@ -55,8 +57,19 @@
 
     <div class="vertpad"></div>
 
+    <div class="sidenav" id="sidebar">
+        <b1> &nbsp; </b1>
+        <div>Upcoming</div>
+        <a href="bg.jpg">Feb. 1 - Diego Gaeta @ foobar</a>
+        <a href="bg.jpg">Feb. 2 - Old Hibiscus @ foobar</a>
+        <a href="bg.jpg">Feb. 3 - Booker Stardrum @ foobar</a>
+        <b1> &nbsp; </b1>
+    </div>
+
+    <div class="performance-container" id="imgs">
+
     <div class="center">
-        <img src="./performance media/LION MILK.jpg" width="560"></img>
+        <img src="./performance media/LION MILK.jpg"></img>
     </div>
 
     <div class="vertpad"></div>
@@ -145,6 +158,30 @@
     </div>
 
     <div class="vertpad"></div>
+    </div>
+
+    <script>
+        window.onscroll = function() {makeSticky()};
+        window.onresize = function() {alignSticky()};
+
+        // Get the navbar
+        var sidebar = document.getElementById("sidebar");
+
+        // Get the offset position of the performance-container
+        var sticky = sidebar.offsetTop;
+
+        // Add the sticky class to the navbar when you reach its scroll position. Remove "sticky" when you leave the scroll position
+        function makeSticky() {
+            var diff = sticky - window.pageYOffset;
+            if (diff > 10) {
+                sidebar.style.top = diff+"px";
+            }
+        }
+        function alignSticky() {
+            sidebar.style.top = "auto";
+            sticky = sidebar.offsetTop;
+        }
+    </script>
 
 
 </body>
