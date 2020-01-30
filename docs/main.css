@@ -80,12 +80,6 @@ img.sticky{
     bottom: 0;
     width: 100vw;
     height: 30vh;
-    /* position: sticky;
-    display: block;
-    margin: 0 auto;
-    bottom: 10vh;
-    height: 30vh;
-    width: 100vw;*/
     filter: hue-rotate(0deg);
     animation: hueshift 10s infinite; 
 }
@@ -229,6 +223,7 @@ button:active {
 }
 .sidenav a {
     padding-left: 5%;
+    padding-right: 5%;
     text-decoration: none;
     font-size: 18px;
     color: black;
