@@ -2,7 +2,8 @@ let nav = [];
 let radius;
 let circleSpeed = .8;
 
-let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
+let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "contact"];
+// let pages = ["bio", "performances", "recorded", "filmsound", "inspiration", "journals", "contact"];
 let sounds = [];
 let mutedsounds = [];
 let circimgs = [];

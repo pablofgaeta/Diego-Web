@@ -29,6 +29,9 @@ function setup() {
 }
 
 function draw() {
+    if (windowWidth != width || windowHeight != height) {
+        windowResized();
+    }
     clear();
     noStroke();
     for(var i = 0; i<7;i++){
@@ -44,7 +47,7 @@ function windowResized() {
     for(var i = 0; i<7;i++){
         nav[i].r = radius;
     }
-    
+    setup();
 }
 
 function keyPressed(){
